@@ -1,0 +1,12 @@
+[
+{
+  "directory": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/SikoraGenerator.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\SikoraGenerator.dir\\cppSources\\JSONValidation.cpp.obj -c \"D:\\OneDrive\\Documents\\Programming languages\\c++\\Projects\\SikoraGenerator\\cppSources\\JSONValidation.cpp\"",
+  "file": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/JSONValidation.cpp"
+},
+{
+  "directory": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/SikoraGenerator.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\SikoraGenerator.dir\\cppSources\\main.cpp.obj -c \"D:\\OneDrive\\Documents\\Programming languages\\c++\\Projects\\SikoraGenerator\\cppSources\\main.cpp\"",
+  "file": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/main.cpp"
+}
+]

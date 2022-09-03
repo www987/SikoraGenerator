@@ -1,0 +1,172 @@
+bool JSONValidation::isFileExist()
+{
+    std::cout << "Podaj sciezke pliku JSON: ";
+    std::getline(std::cin, m_dataPathFile);
+    std::ifstream filee{m_dataPathFile};
+    if (!filee)
+    {
+        //setFlag(9, 9, 0);
+        filee.close();
+        return false;
+    }
+    //setFlag(9, 9, 1);
+    return true;
+}
+void JSONValidation::setFlag(int beginToSet, int endToSet, bool value)
+{
+    for (short i = beginToSet; i <= endToSet; i++)
+    {
+        if (value)
+            m_validationFlag |= bitsetValidation::bitArray[i];
+        else
+            m_validationFlag &= bitsetValidation::bitArray[i];
+    }
+}
+bool JSONValidation::isFlagValidate(int beginToValidate, int endToValidate)
+{
+    bool isBug{false};
+    for (int i = beginToValidate; i <= endToValidate; i++)
+    {
+        switch (i)
+        {
+        case 0:
+            if (isBitOn(i))
+                std::cout << "\nPlik WLZ zostal znaleziony";
+            else
+            {
+                std::cout << "\nNie znaleziono wpisu WLZ lub jest on pusty";
+                isBug = 1;
+            }
+            break;
+        case 1:
+            if (isBitOn(i))
+                std::cout << "\nPlik WLZ zostal znaleziony";
+            else
+            {
+                std::cout << "\nNie znaleziono wpisu WLZ lub jest on pusty";
+                isBug = 1;
+            }
+            break;
+        case 2:
+            if (isBitOn(i))
+                std::cout << "\nPlik WLZ zostal znaleziony";
+            else
+            {
+                std::cout << "\nNie znaleziono wpisu WLZ lub jest on pusty";
+                isBug = 1;
+            }
+            break;
+        case 3:
+            if (isBitOn(i))
+                std::cout << "\nPlik WLZ zostal znaleziony";
+            else
+            {
+                std::cout << "\nNie znaleziono wpisu WLZ lub jest on pusty";
+                isBug = 1;
+            }
+            break;
+        case 4:
+            if (isBitOn(i))
+                std::cout << "\nTyp danych wartosci jest prawidlowy";
+            else
+            {
+                std::cout << "\nTyp danych wartosci NIE jest prawidlowy. Niezgodnosci sa opisane w pliku";
+                isBug = 1;
+            }
+            break;
+        case 5:
+            if (isBitOn(i))
+                std::cout << "\nDane obwodu WLZ zostaly poprawnie podane";
+            else
+            {
+                std::cout << "\nDane obwodu WLZ NIE zostaly poprawnie podane i nie mozna bylo ich znalezc w wartosciach domyslnych";
+                isBug = 1;
+            }
+            break;
+        case 6:
+            if (isBitOn(i))
+                std::cout << "\nDane obwodu G zostaly poprawnie podane";
+            else
+            {
+                std::cout << "\nDane obwodu G NIE zostaly poprawnie podane i nie mozna bylo ich znalezc w wartosciach domyslnych";
+                isBug = 1;
+            }
+            break;
+        case 7:
+            if (isBitOn(i))
+                std::cout << "\nDane obwodu L zostaly poprawnie podane";
+            else
+            {
+                std::cout << "\nDane obwodu L NIE zostaly poprawnie podane i nie mozna bylo ich znalezc w wartosciach domyslnych";
+                isBug = 1;
+            }
+            break;
+        case 8:
+            if (isBitOn(i))
+                std::cout << "\nDane obwodu W zostaly poprawnie podane";
+            else
+            {
+                std::cout << "\nDane obwodu W zostaly poprawnie podane i nie mozna bylo ich znalezc w wartosciach domyslnych. Aczkolwiek nie jest to konieczne";
+                isBug = 1;
+            }
+            break;
+        case 9:
+            if (isBitOn(i))
+                std::cout << "\nPlik z podanej sciezki zostal znaleziony";
+            else
+            {
+                std::cout << "\nPlik z podanej sciezki NIE zostal znaleziony";
+                isBug = 1;
+            }
+            break;
+        case 10:
+            if (isBitOn(i))
+                std::cout << "\nStruktura pliku JSON jest poprawna";
+            else
+            {
+                std::cout << "\nStruktura pliku JSON NIE jest poprawna " << m_JSONException;
+                isBug = 1;
+            }
+            break;
+        }
+    }
+    return !isBug;
+}
+bool JSONValidation::isJSONParsed(){
+    try{
+        m_JSONFile = json::parse(m_file);
+        setFlag(10,10,1);
+    }
+    catch(nlohmann::json::parse_error& e){
+        m_JSONException = e.what();
+        setFlag(10,10,0);
+    }
+}
+bool JSONValidation::isSegmentExist(std::string_view segment, int segmentID){
+    if(m_JSONFile["circuits"][segment].is_null() || m_JSONFile["circuits"][segment][0].size() == 0){
+        setFlag(segmentID, segmentID, 0);
+        return 0;
+    }
+     setFlag(segmentID, segmentID, 1);
+     return 1;
+}
+bool JSONValidation::isObjectExist(std::string_view segment){
+    std::array JSONProperties{"circuitID", "wireLength", "crossSection", "powerConsumption", "voltage", "cableManagementMethod", "neighborlyCables", "circuitBreaker"};
+        for (int i = 0; i < m_JSONFile["circuits"][segment].size(); i++)
+        {
+            for (int j = 0; j < JSONProperties.size(); j++)
+            {
+                if (!m_JSONFile["circuits"][segment][j].contains(JSONProperties[j]))
+                {
+                    if (m_JSONFile["defaultValues"][segment][0].contains(JSONProperties[j]))
+                    {
+                        m_JSONFile["circuits"][segment][j][JSONProperties[j]] = m_JSONFile["defaultValues"][segment][0][JSONProperties[j]];
+                    }
+                    else{
+                         m_JSONFile["circuits"][segment][j][JSONProperties[j]] = "BRAK DANYCH";
+                    }
+                }
+            }
+        }
+        return true;
+}
