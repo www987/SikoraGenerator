@@ -1,0 +1,320 @@
+{
+"circuits": {
+    "G": [
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "circuitID": 1,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 200,
+        "voltage": 230,
+        "wireLength": 2.54
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "circuitID": 2,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 300,
+        "voltage": 230,
+        "wireLength": 8.094
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "circuitID": 3,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 2000,
+        "voltage": 230,
+        "wireLength": 17.409
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "circuitID": 4,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 500,
+        "voltage": 230,
+        "wireLength": 7.236
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "circuitID": 5,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 500,
+        "voltage": 230,
+        "wireLength": 5.085
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "circuitID": 6,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 500,
+        "voltage": 230,
+        "wireLength": 22.204
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "circuitID": 7,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 1500,
+        "voltage": 230,
+        "wireLength": 33.271
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "circuitID": 8,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 700,
+        "voltage": 230,
+        "wireLength": 33.322
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "circuitID": 9,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 100,
+        "voltage": 230,
+        "wireLength": 2.326
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "circuitID": 10,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 100,
+        "voltage": 230,
+        "wireLength": 3.135
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "circuitID": 11,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 100,
+        "voltage": 230,
+        "wireLength": 24.124
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 20,
+        "circuitID": 12,
+        "crossSection": 4,
+        "neighborlyCables": 20,
+        "powerConsumption": 3000,
+        "voltage": 230,
+        "wireLength": 9.209
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "circuitID": 13,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 1000,
+        "voltage": 230,
+        "wireLength": 10.202
+      }
+    ],
+    "L": [
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "circuitID": 1,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 40,
+        "voltage": 230,
+        "wireLength": 4.25
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "circuitID": 2,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 60,
+        "voltage": 230,
+        "wireLength": 5.54
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "circuitID": 3,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 60,
+        "voltage": 230,
+        "wireLength": 11.914
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "circuitID": 4,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 80,
+        "voltage": 230,
+        "wireLength": 21.551
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "circuitID": 5,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 150,
+        "voltage": 230,
+        "wireLength": 34.5
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "circuitID": 6,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 60,
+        "voltage": 230,
+        "wireLength": 5.4
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "circuitID": 7,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 180,
+        "voltage": 230,
+        "wireLength": 30.5
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "circuitID": 8,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 80,
+        "voltage": 230,
+        "wireLength": 24.5
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "circuitID": 9,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 80,
+        "voltage": 230,
+        "wireLength": 30.6
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "circuitID": 10,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 180,
+        "voltage": 230,
+        "wireLength": 44.6
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "circuitID": 11,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 20,
+        "voltage": 230,
+        "wireLength": 6.851
+      },
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "circuitID": 12,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "powerConsumption": 40,
+        "voltage": 230,
+        "wireLength": 7.89
+      }
+    ],
+    "W": [
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 20,
+        "circuitID": 1,
+        "crossSection": 4,
+        "neighborlyCables": 20,
+        "powerConsumption": 700,
+        "voltage": 400,
+        "wireLength": 9.007
+      }
+    ],
+    "WLZ": [
+      {
+        "cableManagementMethod": "D",
+        "circuitBreaker": 200,
+        "circuitID": 1,
+        "crossSection": 10,
+        "neighborlyCables": 1,
+        "powerConsumption": 17490,
+        "voltage": 400,
+        "wireLength": 9.007
+      }
+    ]
+  },
+  "defaultValues": {
+    "G": [
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 16,
+        "crossSection": 2.5,
+        "neighborlyCables": 20,
+        "voltage": 230
+      }
+    ],
+    "L": [
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 10,
+        "crossSection": 1.5,
+        "neighborlyCables": 20,
+        "voltage": 230
+      }
+    ],
+    "W": [
+      {
+        "cableManagementMethod": "C",
+        "circuitBreaker": 20,
+        "crossSection": 4,
+        "neighborlyCables": 20,
+        "voltage": 400
+      }
+    ],
+    "WLZ": [
+      {
+        "cableManagementMethod": "D",
+        "circuitBreaker": 200,
+        "neighborlyCables": 1,
+        "voltage": 400
+      }
+    ]
+  },
+  "instruction": "The full structure is like in the first G, in the next iterations you need to use only circuitID. Every other detail you can set in defaultValues. If you specify value, that value will be used.However I recommend to specify powerConsumption and wireLength in every circuit. Do not do mispelling otherwise program will take default. The program do not take any other properties. IN WLZ add circuitBreaker just to be clear, however circuitBreaker is not possible there"
+}

@@ -1,5 +1,5 @@
 {
-    "instruction": "The full structure is like in the first G, in the next iterations you need to use only circuitID. Every other detail you can set in defaultValues. If you specify value, that value will be used.However I recommend to specify powerConsumption and wireLength in every circuit. Do not do mispelling otherwise program will take default. The program do not take any other properties ",
+    "instruction": "The full structure is like in the first G, in the next iterations you need to use only circuitID. Every other detail you can set in defaultValues. If you specify value, that value will be used.However I recommend to specify powerConsumption and wireLength in every circuit. Do not do mispelling otherwise program will take default. The program do not take any other properties. IN WLZ add circuitBreaker just to be clear, however circuitBreaker is not possible there",
     "circuits": 
         {
             "G": [
@@ -189,7 +189,7 @@
                     "voltage": 400,
                     "cableManagementMethod": "D",
                     "neighborlyCables": 1,
-                    "circuitBreaker": 20
+                    "circuitBreaker": 200
                 }
             ]
         }

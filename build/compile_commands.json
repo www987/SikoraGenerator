@@ -6,6 +6,11 @@
 },
 {
   "directory": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/SikoraGenerator.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\SikoraGenerator.dir\\cppSources\\circuits.cpp.obj -c \"D:\\OneDrive\\Documents\\Programming languages\\c++\\Projects\\SikoraGenerator\\cppSources\\circuits.cpp\"",
+  "file": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/circuits.cpp"
+},
+{
+  "directory": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/build",
   "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/SikoraGenerator.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\SikoraGenerator.dir\\cppSources\\main.cpp.obj -c \"D:\\OneDrive\\Documents\\Programming languages\\c++\\Projects\\SikoraGenerator\\cppSources\\main.cpp\"",
   "file": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/main.cpp"
 }

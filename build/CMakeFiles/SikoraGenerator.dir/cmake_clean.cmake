@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SikoraGenerator.dir/cppSources/JSONValidation.cpp.obj"
   "CMakeFiles/SikoraGenerator.dir/cppSources/JSONValidation.cpp.obj.d"
+  "CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.obj"
+  "CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.obj.d"
   "CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj"
   "CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj.d"
   "SikoraGenerator.exe"

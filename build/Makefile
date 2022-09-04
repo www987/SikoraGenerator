@@ -546,6 +546,30 @@ cppSources/JSONValidation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/JSONValidation.cpp.s
 .PHONY : cppSources/JSONValidation.cpp.s
 
+cppSources/circuits.obj: cppSources/circuits.cpp.obj
+.PHONY : cppSources/circuits.obj
+
+# target to build an object file
+cppSources/circuits.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.obj
+.PHONY : cppSources/circuits.cpp.obj
+
+cppSources/circuits.i: cppSources/circuits.cpp.i
+.PHONY : cppSources/circuits.i
+
+# target to preprocess a source file
+cppSources/circuits.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.i
+.PHONY : cppSources/circuits.cpp.i
+
+cppSources/circuits.s: cppSources/circuits.cpp.s
+.PHONY : cppSources/circuits.s
+
+# target to generate assembly for a file
+cppSources/circuits.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.s
+.PHONY : cppSources/circuits.cpp.s
+
 cppSources/main.obj: cppSources/main.cpp.obj
 .PHONY : cppSources/main.obj
 
@@ -613,6 +637,9 @@ help:
 	@echo ... cppSources/JSONValidation.obj
 	@echo ... cppSources/JSONValidation.i
 	@echo ... cppSources/JSONValidation.s
+	@echo ... cppSources/circuits.obj
+	@echo ... cppSources/circuits.i
+	@echo ... cppSources/circuits.s
 	@echo ... cppSources/main.obj
 	@echo ... cppSources/main.i
 	@echo ... cppSources/main.s

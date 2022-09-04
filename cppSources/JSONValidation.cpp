@@ -104,7 +104,7 @@ bool JSONValidation::isObjectTypeCorrect(std::string_view segment, int segmentID
     bool isMissing{false};
     bool isMethodMissing{true};
     //cableManagementMethod allowed values
-    std::array mngmtMethod{"A1", "A2", "B1", "B2", "C", "D", "E", "F", "G", "E", "F"};
+    std::array mngmtMethod{"A1", "A2", "B1", "B2", "C", "D", "E", "F", "G"};
     // iterate through every circuit in Segment type
     for (int i = 0; i < m_JSONFile["circuits"][segment].size(); i++)
     {
