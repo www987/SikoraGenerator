@@ -1,6 +1,7 @@
 #ifndef JSONVALIDATION_CPP
 #define JSONVALIDATION_CPP
 #include "../headers/jsonValidation.hpp"
+// The following namespaceIsTo check eror state of validation class, but in future I should use it in others too.
 namespace bitsetValidation
 {
     constexpr std::bitset<15> isWLZEntered{0b000'0000'0000'0001};
@@ -25,7 +26,7 @@ namespace bitsetValidation
 bool JSONValidation::isFileExist()
 {
     std::string dataPathFile;
-    std::cout << infoMessage << "Podaj sciezke pliku JSON: ";
+    std::cout << messageHeaders::info << "Podaj sciezke pliku JSON: ";
     std::getline(std::cin, dataPathFile);
     m_file.open(dataPathFile);
     if (!m_file)
@@ -171,11 +172,11 @@ void JSONValidation::validateAll()
     //
     do
     {
-        std::cout<<startMessage<<"Rozpoczynam walidacje";
+        std::cout<<messageHeaders::start<<"Rozpoczynam walidacje";
         std::cout << "\n1) Etap pierwszy walidacji - sprawdzanie sciezki pliku:";
         isFileExist();
         if (!isFlagCorrect(9, 9)){
-            std::cout<<endMessage;
+            std::cout<<messageHeaders::end;
             continue;
         }
             
@@ -183,7 +184,7 @@ void JSONValidation::validateAll()
         std::cout << "\n2) Etap drugi walidacji - sprawdzanie struktury formatu JSON:";
         isJSONParsed();
         if (!isFlagCorrect(10, 10)){
-            std::cout<<endMessage;
+            std::cout<<messageHeaders::end;
             continue;
         }
             
@@ -193,9 +194,8 @@ void JSONValidation::validateAll()
         isSegmentExist("G", 1);
         isSegmentExist("L", 2);
         isSegmentExist("W", 3);
-        std::cout<<m_validationFlag;
         if (!isFlagCorrect(0, 3)){
-            std::cout<<endMessage<<"Popraw wskazane bledy";
+            std::cout<<messageHeaders::end<<"Popraw wskazane bledy";
             continue;
         }
             
@@ -205,12 +205,11 @@ void JSONValidation::validateAll()
         isObjectExist("G", 6);
         isObjectExist("L", 7);
         isObjectExist("W", 8);
-        std::cout<<m_validationFlag;
         std::cout<< m_JSONFile.dump(2);
         //Flag bit 8 is W which is not neccessary so it can't trigger countinue
         isFlagCorrect(8,8 );
         if (!isFlagCorrect(5, 7 ) ){
-            std::cout<<endMessage<<"Wstaw dane w miejscu BRAK DANYCH";
+            std::cout<<messageHeaders::end<<"Wstaw dane w miejscu BRAK DANYCH";
             continue;
         }
 
@@ -219,14 +218,13 @@ void JSONValidation::validateAll()
         isObjectTypeCorrect("G", 12);
         isObjectTypeCorrect("L", 13);
         isObjectTypeCorrect("W", 14);
-        std::cout<<m_validationFlag;
         std::cout<< m_JSONFile.dump(2);
         if (!isFlagCorrect(11, 14 ) ){
-            std::cout<<endMessage<<"Wstaw poprawne typy danych";
+            std::cout<<messageHeaders::end<<"Wstaw poprawne typy danych";
             continue;
         }
         else{
-             std::cout<<endMessage<<"Walidacja przebiegla poprawnie!";
+             std::cout<<messageHeaders::end<<"Walidacja przebiegla poprawnie!";
              break;
         }
     } while (1);
@@ -243,136 +241,136 @@ bool JSONValidation::isFlagCorrect(int beginToValidate, int endToValidate)
         {
         case 0:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Wpis WLZ zostal znaleziony";
+                std::cout << messageHeaders::pass << "Wpis WLZ zostal znaleziony";
             else
             {
-                std::cout << m_errorMessage << "Nie znaleziono wpisu WLZ lub jest on pusty";
+                std::cout << messageHeaders::error << "Nie znaleziono wpisu WLZ lub jest on pusty";
                 isBug = 1;
             }
             break;
         case 1:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Wpis G zostal znaleziony";
+                std::cout << messageHeaders::pass << "Wpis G zostal znaleziony";
             else
             {
-                std::cout << m_errorMessage << "Nie znaleziono wpisu G lub jest on pusty";
+                std::cout << messageHeaders::error << "Nie znaleziono wpisu G lub jest on pusty";
                 isBug = 1;
             }
             break;
         case 2:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Wpis L zostal znaleziony";
+                std::cout << messageHeaders::pass << "Wpis L zostal znaleziony";
             else
             {
-                std::cout << m_errorMessage << "Nie znaleziono wpisu L lub jest on pusty";
+                std::cout << messageHeaders::error << "Nie znaleziono wpisu L lub jest on pusty";
                 isBug = 1;
             }
             break;
         case 3:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Wpis W zostal znaleziony";
+                std::cout << messageHeaders::pass << "Wpis W zostal znaleziony";
             else
             {
-                std::cout << m_errorMessage << "Nie znaleziono wpisu W lub jest on pusty";
+                std::cout << messageHeaders::error << "Nie znaleziono wpisu W lub jest on pusty";
                 isBug = 1;
             }
             break;
         case 4:
             if (isBitOn(i))
-                std::cout << m_passMessage << "DO UZUPELNIENIA POZNIEJ";
+                std::cout << messageHeaders::pass << "DO UZUPELNIENIA POZNIEJ";
             else
             {
-                std::cout << m_errorMessage << "DO UZUPELNIENIA POZNIEJ";
+                std::cout << messageHeaders::error << "DO UZUPELNIENIA POZNIEJ";
                 isBug = 1;
             }
             break;
         case 5:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Dane obwodu WLZ zostaly poprawnie podane";
+                std::cout << messageHeaders::pass << "Dane obwodu WLZ zostaly poprawnie podane";
             else
             {
-                std::cout << m_errorMessage << "Dane obwodu WLZ NIE zostaly poprawnie podane i nie mozna bylo ich znalezc w wartosciach domyslnych";
+                std::cout << messageHeaders::error << "Dane obwodu WLZ NIE zostaly poprawnie podane i nie mozna bylo ich znalezc w wartosciach domyslnych";
                 isBug = 1;
             }
             break;
         case 6:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Dane obwodu G zostaly poprawnie podane";
+                std::cout << messageHeaders::pass << "Dane obwodu G zostaly poprawnie podane";
             else
             {
-                std::cout << m_errorMessage << "Dane obwodu G NIE zostaly poprawnie podane i nie mozna bylo ich znalezc w wartosciach domyslnych";
+                std::cout << messageHeaders::error << "Dane obwodu G NIE zostaly poprawnie podane i nie mozna bylo ich znalezc w wartosciach domyslnych";
                 isBug = 1;
             }
             break;
         case 7:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Dane obwodu L zostaly poprawnie podane";
+                std::cout << messageHeaders::pass << "Dane obwodu L zostaly poprawnie podane";
             else
             {
-                std::cout << m_errorMessage << "Dane obwodu L NIE zostaly poprawnie podane i nie mozna bylo ich znalezc w wartosciach domyslnych";
+                std::cout << messageHeaders::error << "Dane obwodu L NIE zostaly poprawnie podane i nie mozna bylo ich znalezc w wartosciach domyslnych";
                 isBug = 1;
             }
             break;
         case 8:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Dane obwodu W zostaly poprawnie podane";
+                std::cout << messageHeaders::pass << "Dane obwodu W zostaly poprawnie podane";
             else
             {
-                std::cout << m_errorMessage << "Dane obwodu W zostaly poprawnie podane i nie mozna bylo ich znalezc w wartosciach domyslnych. Aczkolwiek nie jest to konieczne";
+                std::cout << messageHeaders::error << "Dane obwodu W zostaly poprawnie podane i nie mozna bylo ich znalezc w wartosciach domyslnych. Aczkolwiek nie jest to konieczne";
                 isBug = 1;
             }
             break;
         case 9:
             if (isBitOn(i))
-                std::cout << newLineErase(m_passMessage) << "Plik z podanej sciezki zostal znaleziony";
+                std::cout << newLineErase(messageHeaders::pass) << "Plik z podanej sciezki zostal znaleziony";
             else
             {
-                std::cout << newLineErase(m_errorMessage) << "Plik z podanej sciezki NIE zostal znaleziony";
+                std::cout << newLineErase(messageHeaders::error) << "Plik z podanej sciezki NIE zostal znaleziony";
                 isBug = 1;
             }
             break;
         case 10:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Struktura pliku JSON jest poprawna";
+                std::cout << messageHeaders::pass << "Struktura pliku JSON jest poprawna";
             else
             {
-                std::cout << m_errorMessage << "Struktura pliku JSON NIE jest poprawna " << m_JSONException;
+                std::cout << messageHeaders::error << "Struktura pliku JSON NIE jest poprawna " << m_JSONException;
                 isBug = 1;
             }
             break;
         case 11:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Typ danych wartosci dla WLZ jest prawidlowy";
+                std::cout << messageHeaders::pass << "Typ danych wartosci dla WLZ jest prawidlowy";
             else
             {
-                std::cout << m_errorMessage << "Typ danych wartosci dla WLZ NIE jest prawidlowy. Niezgodnosci sa opisane w pliku";
+                std::cout << messageHeaders::error << "Typ danych wartosci dla WLZ NIE jest prawidlowy. Niezgodnosci sa opisane w pliku";
                 isBug = 1;
             }
             break;
         case 12:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Typ danych wartosci dla G jest prawidlowy";
+                std::cout << messageHeaders::pass << "Typ danych wartosci dla G jest prawidlowy";
             else
             {
-                std::cout << m_errorMessage << "Typ danych wartosci dla G NIE jest prawidlowy. Niezgodnosci sa opisane w pliku";
+                std::cout << messageHeaders::error << "Typ danych wartosci dla G NIE jest prawidlowy. Niezgodnosci sa opisane w pliku";
                 isBug = 1;
             }
             break;
         case 13:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Typ danych wartosci dla L jest prawidlowy";
+                std::cout << messageHeaders::pass << "Typ danych wartosci dla L jest prawidlowy";
             else
             {
-                std::cout << m_errorMessage << "Typ danych wartosci dla L NIE jest prawidlowy. Niezgodnosci sa opisane w pliku";
+                std::cout << messageHeaders::error << "Typ danych wartosci dla L NIE jest prawidlowy. Niezgodnosci sa opisane w pliku";
                 isBug = 1;
             }
             break;
         case 14:
             if (isBitOn(i))
-                std::cout << m_passMessage << "Typ danych wartosci dla W jest prawidlowy";
+                std::cout << messageHeaders::pass << "Typ danych wartosci dla W jest prawidlowy";
             else
             {
-                std::cout << m_errorMessage << "Typ danych wartosci dla W NIE jest prawidlowy. Niezgodnosci sa opisane w pliku";
+                std::cout << messageHeaders::error << "Typ danych wartosci dla W NIE jest prawidlowy. Niezgodnosci sa opisane w pliku";
                 isBug = 1;
             }
             break;

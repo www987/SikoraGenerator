@@ -12,11 +12,7 @@ private:
     using json = nlohmann::json;
     json &m_JSONFile;
     std::ifstream m_file;
-    std::string infoMessage{"\n\t[INFO] "};
-    std::string m_errorMessage{"\n\t[ERROR] "};
-    std::string m_passMessage{"\n\t[PASS] "};
-    std::string endMessage{"\n[END] "};
-    std::string startMessage{"\n[START] "};
+  
     std::array<std::string,8> m_JSONPropertiesKey{"circuitID", "wireLength", "crossSection", "powerConsumption", "voltage", "cableManagementMethod", "neighborlyCables", "circuitBreaker"};
 public:
     JSONValidation(json &JSONFile) : m_JSONFile(JSONFile) {}

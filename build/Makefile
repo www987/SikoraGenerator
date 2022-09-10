@@ -570,6 +570,78 @@ cppSources/circuits.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.s
 .PHONY : cppSources/circuits.cpp.s
 
+cppSources/circuitsCalculate.obj: cppSources/circuitsCalculate.cpp.obj
+.PHONY : cppSources/circuitsCalculate.obj
+
+# target to build an object file
+cppSources/circuitsCalculate.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.obj
+.PHONY : cppSources/circuitsCalculate.cpp.obj
+
+cppSources/circuitsCalculate.i: cppSources/circuitsCalculate.cpp.i
+.PHONY : cppSources/circuitsCalculate.i
+
+# target to preprocess a source file
+cppSources/circuitsCalculate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.i
+.PHONY : cppSources/circuitsCalculate.cpp.i
+
+cppSources/circuitsCalculate.s: cppSources/circuitsCalculate.cpp.s
+.PHONY : cppSources/circuitsCalculate.s
+
+# target to generate assembly for a file
+cppSources/circuitsCalculate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.s
+.PHONY : cppSources/circuitsCalculate.cpp.s
+
+cppSources/latex.obj: cppSources/latex.cpp.obj
+.PHONY : cppSources/latex.obj
+
+# target to build an object file
+cppSources/latex.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.obj
+.PHONY : cppSources/latex.cpp.obj
+
+cppSources/latex.i: cppSources/latex.cpp.i
+.PHONY : cppSources/latex.i
+
+# target to preprocess a source file
+cppSources/latex.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.i
+.PHONY : cppSources/latex.cpp.i
+
+cppSources/latex.s: cppSources/latex.cpp.s
+.PHONY : cppSources/latex.s
+
+# target to generate assembly for a file
+cppSources/latex.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.s
+.PHONY : cppSources/latex.cpp.s
+
+cppSources/latexRaport.obj: cppSources/latexRaport.cpp.obj
+.PHONY : cppSources/latexRaport.obj
+
+# target to build an object file
+cppSources/latexRaport.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.obj
+.PHONY : cppSources/latexRaport.cpp.obj
+
+cppSources/latexRaport.i: cppSources/latexRaport.cpp.i
+.PHONY : cppSources/latexRaport.i
+
+# target to preprocess a source file
+cppSources/latexRaport.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.i
+.PHONY : cppSources/latexRaport.cpp.i
+
+cppSources/latexRaport.s: cppSources/latexRaport.cpp.s
+.PHONY : cppSources/latexRaport.s
+
+# target to generate assembly for a file
+cppSources/latexRaport.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SikoraGenerator.dir\build.make CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.s
+.PHONY : cppSources/latexRaport.cpp.s
+
 cppSources/main.obj: cppSources/main.cpp.obj
 .PHONY : cppSources/main.obj
 
@@ -640,6 +712,15 @@ help:
 	@echo ... cppSources/circuits.obj
 	@echo ... cppSources/circuits.i
 	@echo ... cppSources/circuits.s
+	@echo ... cppSources/circuitsCalculate.obj
+	@echo ... cppSources/circuitsCalculate.i
+	@echo ... cppSources/circuitsCalculate.s
+	@echo ... cppSources/latex.obj
+	@echo ... cppSources/latex.i
+	@echo ... cppSources/latex.s
+	@echo ... cppSources/latexRaport.obj
+	@echo ... cppSources/latexRaport.i
+	@echo ... cppSources/latexRaport.s
 	@echo ... cppSources/main.obj
 	@echo ... cppSources/main.i
 	@echo ... cppSources/main.s

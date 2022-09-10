@@ -259,4 +259,6 @@ CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.obj: \
  C:/msys64/mingw64/include/c++/11.3.0/bits/fs_ops.h \
  C:/msys64/mingw64/include/c++/11.3.0/ranges \
  C:/msys64/mingw64/include/c++/11.3.0/optional \
- C:/msys64/mingw64/include/c++/11.3.0/any
+ C:/msys64/mingw64/include/c++/11.3.0/any \
+ D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/headers/circuitsCalculate.hpp \
+ D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/headers/basicLibraries.hpp

@@ -21,7 +21,7 @@
                 {
                     "circuitID": 3,
                     "wireLength": 17.409,
-                    "powerConsumption": 2000
+                    "powerConsumption": 800
                 },
                 {
                     "circuitID": 4,
@@ -90,7 +90,7 @@
                 {
                     "circuitID": 3,
                     "wireLength": 11.914,
-                    "powerConsumption": 60
+                    "powerConsumption": 40
                 },
                 {
                     "circuitID": 4,
@@ -142,15 +142,15 @@
                 {
                     "circuitID": 1,
                     "wireLength": 9.007,
-                    "powerConsumption": 700,
+                    "powerConsumption": 7000,
                     "crossSection": 4
                 }
             ],
             "WLZ": [
                 {
                     "circuitID": 1,
-                    "wireLength": 9.007,
-                    "powerConsumption": 17490,
+                    "wireLength": 20,
+                    "powerConsumption": 0,
                     "crossSection": 10
                 }
             ]

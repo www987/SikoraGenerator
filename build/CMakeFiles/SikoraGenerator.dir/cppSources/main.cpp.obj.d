@@ -261,7 +261,10 @@ CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/11.3.0/ranges \
  C:/msys64/mingw64/include/c++/11.3.0/optional \
  C:/msys64/mingw64/include/c++/11.3.0/any \
- D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/headers/jsonValidation.hpp \
+ D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/headers/circuitsCalculate.hpp \
  D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/headers/basicLibraries.hpp \
+ D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/headers/jsonValidation.hpp \
  C:/msys64/mingw64/include/c++/11.3.0/bitset \
- D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/headers/json.hpp
+ D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/headers/json.hpp \
+ D:\OneDrive\Documents\Programming\ languages\c++\Projects\SikoraGenerator\cppSources\latex.cpp \
+ D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/headers/latexRaport.hpp

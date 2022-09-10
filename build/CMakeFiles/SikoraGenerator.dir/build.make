@@ -98,11 +98,56 @@ CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\cppSources\circuits.cpp" -o CMakeFiles\SikoraGenerator.dir\cppSources\circuits.cpp.s
 
+CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.obj: CMakeFiles/SikoraGenerator.dir/flags.make
+CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.obj: CMakeFiles/SikoraGenerator.dir/includes_CXX.rsp
+CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.obj: D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/cppSources/circuitsCalculate.cpp
+CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.obj: CMakeFiles/SikoraGenerator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.obj -MF CMakeFiles\SikoraGenerator.dir\cppSources\circuitsCalculate.cpp.obj.d -o CMakeFiles\SikoraGenerator.dir\cppSources\circuitsCalculate.cpp.obj -c "D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\cppSources\circuitsCalculate.cpp"
+
+CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\cppSources\circuitsCalculate.cpp" > CMakeFiles\SikoraGenerator.dir\cppSources\circuitsCalculate.cpp.i
+
+CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\cppSources\circuitsCalculate.cpp" -o CMakeFiles\SikoraGenerator.dir\cppSources\circuitsCalculate.cpp.s
+
+CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.obj: CMakeFiles/SikoraGenerator.dir/flags.make
+CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.obj: CMakeFiles/SikoraGenerator.dir/includes_CXX.rsp
+CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.obj: D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/cppSources/latex.cpp
+CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.obj: CMakeFiles/SikoraGenerator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.obj -MF CMakeFiles\SikoraGenerator.dir\cppSources\latex.cpp.obj.d -o CMakeFiles\SikoraGenerator.dir\cppSources\latex.cpp.obj -c "D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\cppSources\latex.cpp"
+
+CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\cppSources\latex.cpp" > CMakeFiles\SikoraGenerator.dir\cppSources\latex.cpp.i
+
+CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\cppSources\latex.cpp" -o CMakeFiles\SikoraGenerator.dir\cppSources\latex.cpp.s
+
+CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.obj: CMakeFiles/SikoraGenerator.dir/flags.make
+CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.obj: CMakeFiles/SikoraGenerator.dir/includes_CXX.rsp
+CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.obj: D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/cppSources/latexRaport.cpp
+CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.obj: CMakeFiles/SikoraGenerator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.obj -MF CMakeFiles\SikoraGenerator.dir\cppSources\latexRaport.cpp.obj.d -o CMakeFiles\SikoraGenerator.dir\cppSources\latexRaport.cpp.obj -c "D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\cppSources\latexRaport.cpp"
+
+CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\cppSources\latexRaport.cpp" > CMakeFiles\SikoraGenerator.dir\cppSources\latexRaport.cpp.i
+
+CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\cppSources\latexRaport.cpp" -o CMakeFiles\SikoraGenerator.dir\cppSources\latexRaport.cpp.s
+
 CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj: CMakeFiles/SikoraGenerator.dir/flags.make
 CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj: CMakeFiles/SikoraGenerator.dir/includes_CXX.rsp
 CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj: D:/OneDrive/Documents/Programming\ languages/c++/Projects/SikoraGenerator/cppSources/main.cpp
 CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj: CMakeFiles/SikoraGenerator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj -MF CMakeFiles\SikoraGenerator.dir\cppSources\main.cpp.obj.d -o CMakeFiles\SikoraGenerator.dir\cppSources\main.cpp.obj -c "D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\cppSources\main.cpp"
 
 CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.i: cmake_force
@@ -117,6 +162,9 @@ CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.s: cmake_force
 SikoraGenerator_OBJECTS = \
 "CMakeFiles/SikoraGenerator.dir/cppSources/JSONValidation.cpp.obj" \
 "CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.obj" \
+"CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.obj" \
+"CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.obj" \
+"CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.obj" \
 "CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj"
 
 # External object files for target SikoraGenerator
@@ -124,12 +172,15 @@ SikoraGenerator_EXTERNAL_OBJECTS =
 
 SikoraGenerator.exe: CMakeFiles/SikoraGenerator.dir/cppSources/JSONValidation.cpp.obj
 SikoraGenerator.exe: CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.obj
+SikoraGenerator.exe: CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.obj
+SikoraGenerator.exe: CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.obj
+SikoraGenerator.exe: CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.obj
 SikoraGenerator.exe: CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj
 SikoraGenerator.exe: CMakeFiles/SikoraGenerator.dir/build.make
 SikoraGenerator.exe: CMakeFiles/SikoraGenerator.dir/linklibs.rsp
 SikoraGenerator.exe: CMakeFiles/SikoraGenerator.dir/objects1.rsp
 SikoraGenerator.exe: CMakeFiles/SikoraGenerator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable SikoraGenerator.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\OneDrive\Documents\Programming languages\c++\Projects\SikoraGenerator\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SikoraGenerator.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\SikoraGenerator.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

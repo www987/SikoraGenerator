@@ -11,6 +11,21 @@
 },
 {
   "directory": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/SikoraGenerator.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\SikoraGenerator.dir\\cppSources\\circuitsCalculate.cpp.obj -c \"D:\\OneDrive\\Documents\\Programming languages\\c++\\Projects\\SikoraGenerator\\cppSources\\circuitsCalculate.cpp\"",
+  "file": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/circuitsCalculate.cpp"
+},
+{
+  "directory": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/SikoraGenerator.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\SikoraGenerator.dir\\cppSources\\latex.cpp.obj -c \"D:\\OneDrive\\Documents\\Programming languages\\c++\\Projects\\SikoraGenerator\\cppSources\\latex.cpp\"",
+  "file": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/latex.cpp"
+},
+{
+  "directory": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/SikoraGenerator.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\SikoraGenerator.dir\\cppSources\\latexRaport.cpp.obj -c \"D:\\OneDrive\\Documents\\Programming languages\\c++\\Projects\\SikoraGenerator\\cppSources\\latexRaport.cpp\"",
+  "file": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/latexRaport.cpp"
+},
+{
+  "directory": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/build",
   "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/SikoraGenerator.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\SikoraGenerator.dir\\cppSources\\main.cpp.obj -c \"D:\\OneDrive\\Documents\\Programming languages\\c++\\Projects\\SikoraGenerator\\cppSources\\main.cpp\"",
   "file": "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/main.cpp"
 }

@@ -10,6 +10,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/JSONValidation.cpp" "CMakeFiles/SikoraGenerator.dir/cppSources/JSONValidation.cpp.obj" "gcc" "CMakeFiles/SikoraGenerator.dir/cppSources/JSONValidation.cpp.obj.d"
   "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/circuits.cpp" "CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.obj" "gcc" "CMakeFiles/SikoraGenerator.dir/cppSources/circuits.cpp.obj.d"
+  "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/circuitsCalculate.cpp" "CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.obj" "gcc" "CMakeFiles/SikoraGenerator.dir/cppSources/circuitsCalculate.cpp.obj.d"
+  "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/latex.cpp" "CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.obj" "gcc" "CMakeFiles/SikoraGenerator.dir/cppSources/latex.cpp.obj.d"
+  "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/latexRaport.cpp" "CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.obj" "gcc" "CMakeFiles/SikoraGenerator.dir/cppSources/latexRaport.cpp.obj.d"
   "D:/OneDrive/Documents/Programming languages/c++/Projects/SikoraGenerator/cppSources/main.cpp" "CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj" "gcc" "CMakeFiles/SikoraGenerator.dir/cppSources/main.cpp.obj.d"
   )
 

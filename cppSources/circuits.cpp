@@ -1,7 +1,8 @@
-#ifndef CIRCUITS_HPP
-#define CIRCUITS_HPP
+#ifndef CIRCUITS_CPP
+#define CIRCUITS_CPP
 #include "../headers/basicLibraries.hpp"
 #include "../headers/json.hpp"
+#include "../headers/circuitsCalculate.hpp"
 template <typename T>
 class Circuits
 {
@@ -11,10 +12,14 @@ private:
     json &m_JSONFile;
     json m_IZValues;
     json m_correctionRateValues;
-    int m_vectorDatabaseIterator = 0;
+    //This function convert JSON properties to struct in main.cpp. JSON have to be validated first 
     void convertToStruct(std::string segment)
     {
         std::string main = "circuits";
+        // if W is empty we can not allow to loop through JSON
+        if (segment == "W" && (m_JSONFile["circuits"][segment].is_null() || m_JSONFile["circuits"][segment][0].size() == 0))
+            return;
+        // Here we insert data to our struct
         for (int i = 0; i < m_JSONFile[main][segment].size(); i++)
         {
             T tempStruct{};
@@ -27,38 +32,51 @@ private:
             tempStruct.cableManagementMethod = m_JSONFile[main][segment][i]["cableManagementMethod"];
             tempStruct.neighborlyCables = m_JSONFile[main][segment][i]["neighborlyCables"];
             tempStruct.circuitBreaker = m_JSONFile[main][segment][i]["circuitBreaker"];
-            std::cout<<"TEst";
             tempStruct.IZ = getIZ(tempStruct.cableManagementMethod, tempStruct.crossSection, calculateAmountOfWires(tempStruct.voltage));
-            std::cout<<"TEst1";
             tempStruct.correctionRate = getCorrectionRate(tempStruct.cableManagementMethod, tempStruct.neighborlyCables);
             m_vectorDatabase.push_back(tempStruct);
         }
     }
+    // Get IZ from json file IZ.json
     double getIZ(std::string_view cableMngmtMthd, double crossSection, int amountOfWires)
     {
-        int crossSectionInt = (crossSection*10);
-
+        int crossSectionInt = (crossSection * 10);
+        // because of converstion from double to string we need to erase additional 0 and .
         std::string amountOfWiresString = std::to_string(amountOfWires);
         std::string crossSectionString = std::to_string(crossSection);
-        crossSectionString.erase ( crossSectionString.find_last_not_of('0') + 1, std::string::npos );
-        crossSectionString.erase ( crossSectionString.find_last_not_of('.') + 1, std::string::npos );
-        std::cout<<"amountOfwires and cross section"<<amountOfWiresString<<"and"<<crossSectionString;
+        crossSectionString.erase(crossSectionString.find_last_not_of('0') + 1, std::string::npos);
+        crossSectionString.erase(crossSectionString.find_last_not_of('.') + 1, std::string::npos);
         return m_IZValues[crossSectionString][cableMngmtMthd][amountOfWiresString];
     }
+    // Get CorrectionRate from json file correctionRate.json
     double getCorrectionRate(std::string_view cableMngmtMthd, double neighborlyCables)
     {
+        //In PN-IEC standard did not mentioned about more than 20
         if (neighborlyCables > 20)
         {
             neighborlyCables = 20;
         }
+        // because of converstion from double to string we need to erase additional 0 and .
         std::string neighborlyCablesString = std::to_string(neighborlyCables);
-        neighborlyCablesString.erase (neighborlyCablesString.find_last_not_of('0') + 1, std::string::npos );
-        neighborlyCablesString.erase (neighborlyCablesString.find_last_not_of('.') + 1, std::string::npos );
+        neighborlyCablesString.erase(neighborlyCablesString.find_last_not_of('0') + 1, std::string::npos);
+        neighborlyCablesString.erase(neighborlyCablesString.find_last_not_of('.') + 1, std::string::npos);
         return m_correctionRateValues[cableMngmtMthd][neighborlyCablesString];
     }
     double calculateAmountOfWires(double voltage)
     {
+        // I took 270 to be sure that no one with 2 wires will get 3 wires
         return voltage > 270 ? 3 : 2;
+    }
+    //Count total amount of power ponsumption from every circuit = L,W,G
+    void countWLZPowerConsumption()
+    {
+        // 1 Because the 0 is WLZ and we can not count power consumption from WLZ
+        double sum{};
+        for (int i = 1; i < m_vectorDatabase.size(); i++)
+        {
+            sum += m_vectorDatabase[i].powerConsumption;
+        }
+        m_vectorDatabase[0].powerConsumption = sum;
     }
 
 public:
@@ -67,36 +85,60 @@ public:
         std::ifstream IZPath{"../IZ.json"};
         std::ifstream correctionRatePath{"../correctionRate.json"};
         m_IZValues = json::parse(IZPath);
-        //std::cout<<m_IZValues.dump(2);
         m_correctionRateValues = json::parse(correctionRatePath);
-        //std::cout<<m_correctionRateValues.dump(1);
     }
     void calculateAll()
     {
+        std::cout<<messageHeaders::start<<"Przystepuje do obliczen obwodow";
+        convertToStruct("WLZ");
         convertToStruct("G");
+        convertToStruct("L");
+        convertToStruct("W");
+        countWLZPowerConsumption();
+        CircuitsCalculate circuitObj{"WLZ"};
+
+        for (int i=0;i<m_vectorDatabase.size();i++)
+        {
+            circuitObj = CircuitsCalculate{m_vectorDatabase[i].circuitType};
+    
+            m_vectorDatabase[i].IB = circuitObj.countIB(m_vectorDatabase[i].powerConsumption, m_vectorDatabase[i].voltage);
+
+            m_vectorDatabase[i].isIZCorrect = circuitObj.checkIZ(m_vectorDatabase[i].IZ, m_vectorDatabase[i].IB, m_vectorDatabase[i].correctionRate);
+
+            m_vectorDatabase[i].voltageDrop = circuitObj.countVoltageDrop(m_vectorDatabase[i].powerConsumption, m_vectorDatabase[i].wireLength, m_vectorDatabase[i].crossSection, m_vectorDatabase[i].voltage);
+
+            // we need to make sure that WLZ power consumption will be excluded from counting because otherwise our calculations will be incorrect
+            if (m_vectorDatabase[i].circuitType == "WLZ")
+                m_vectorDatabase[i].isVoltageDropCorrect = circuitObj.checkVoltageDrop(m_vectorDatabase[i].voltageDrop);
+            else
+                m_vectorDatabase[i].isVoltageDropCorrect = circuitObj.checkVoltageDrop(m_vectorDatabase[0].voltageDrop + m_vectorDatabase[i].voltageDrop);
+            m_vectorDatabase[i].isCircuitBreakerCorrect = circuitObj.checkCircuitBreaker(m_vectorDatabase[i].IB, m_vectorDatabase[i].IZ, m_vectorDatabase[i].circuitBreaker);
+        }
+        std::cout<<messageHeaders::pass<<"Wszystkie obwody zostaly poprawnie policzone!";
+        std::cout<<messageHeaders::end;
         printAllStructs();
     }
     void printAllStructs()
     {
         for (int i{0}; auto circuit : m_vectorDatabase)
         {
+            std::cout << '\n';
             std::cout << "\nTYPE:" << circuit.circuitType;
-            std::cout << "\nID:" << circuit.circuitID;
-            std::cout << "\nWireLength:" << circuit.wireLength;
-            std::cout << "\ncrossSection:" << circuit.crossSection;
-            std::cout << "\npowerConsumption:" << circuit.powerConsumption;
-            std::cout << "\nVoltage:" << circuit.voltage;
-            std::cout << "\nCableManagementMethod:" << circuit.cableManagementMethod;
-            std::cout << "\nneighborlyCables:" << circuit.neighborlyCables;
-            std::cout << "\ncircuitBreaker:" << circuit.circuitBreaker;
-            std::cout << "\nIB:" << circuit.IB;
-            std::cout << "\nIZ:" << circuit.IZ;
-            std::cout << "\nCorrectionRate:" << circuit.correctionRate;
-            std::cout << "\nvoltageDrop:" << circuit.voltageDrop;
-            std::cout << "\npowerShutdown:" << circuit.powerShutdown;
-            std::cout << "\nIZCorrect:" << circuit.isIZCorrect;
-            std::cout << "\nisVoltageDropCorrect:" << circuit.isVoltageDropCorrect;
-            std::cout << "\nisCircuitBreakerCorrect:" << circuit.isCircuitBreakerCorrect;
+            std::cout << "\n\tID:" << circuit.circuitID;
+            std::cout << "\n\tWireLength:" << circuit.wireLength;
+            std::cout << "\n\tcrossSection:" << circuit.crossSection;
+            std::cout << "\n\tpowerConsumption:" << circuit.powerConsumption;
+            std::cout << "\n\tVoltage:" << circuit.voltage;
+            std::cout << "\n\tCableManagementMethod:" << circuit.cableManagementMethod;
+            std::cout << "\n\tneighborlyCables:" << circuit.neighborlyCables;
+            std::cout << "\n\tcircuitBreaker:" << circuit.circuitBreaker;
+            std::cout << "\n\tIB:" << circuit.IB;
+            std::cout << "\n\tIZ:" << circuit.IZ;
+            std::cout << "\n\tCorrectionRate:" << circuit.correctionRate;
+            std::cout << "\n\tvoltageDrop:" << circuit.voltageDrop;
+            std::cout << "\n\tIZCorrect:" << circuit.isIZCorrect;
+            std::cout << "\n\tisVoltageDropCorrect:" << circuit.isVoltageDropCorrect;
+            std::cout << "\n\tisCircuitBreakerCorrect:" << circuit.isCircuitBreakerCorrect;
         }
     }
 };
