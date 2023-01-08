@@ -28,6 +28,12 @@ public:
         double IZ;
         double correctionRate;
         double voltageDrop;
+        double R;
+        double Rsum;
+        double X;
+        double Xsum;
+        double Z;
+        double IK;
         bool isIZCorrect;
         bool isVoltageDropCorrect;
         bool isCircuitBreakerCorrect;
@@ -72,7 +78,4 @@ int main(int, char **)
             isUserAnswerOK = false;
         } 
     }
-        
-    
-    
 }

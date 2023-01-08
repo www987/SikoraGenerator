@@ -44,7 +44,7 @@ public:
                 raport.printCircuitBreakerCheck(m_vectorDatabase[i].isCircuitBreakerCorrect, m_vectorDatabase[i].IB, m_vectorDatabase[i].IZ, m_vectorDatabase[i].circuitBreaker, m_vectorDatabase[i].circuitType);
                 m_latexRaportFile << '\n'
                                 << "\\end{itemize}";
-                raport.generateTable(m_vectorDatabase[i].circuitType, m_vectorDatabase[i].circuitID, m_vectorDatabase[i].wireLength, m_vectorDatabase[i].crossSection, m_vectorDatabase[i].powerConsumption, m_vectorDatabase[i].voltage, m_vectorDatabase[i].voltageDrop, m_vectorDatabase[i].IB);
+                raport.generateTable(m_vectorDatabase[i].circuitType, m_vectorDatabase[i].circuitID, m_vectorDatabase[i].wireLength, m_vectorDatabase[i].crossSection, m_vectorDatabase[i].powerConsumption, m_vectorDatabase[i].voltage, m_vectorDatabase[i].voltageDrop, m_vectorDatabase[i].IB, m_vectorDatabase[i].R, m_vectorDatabase[i].X, m_vectorDatabase[i].Rsum, m_vectorDatabase[i].Xsum,m_vectorDatabase[i].Z,m_vectorDatabase[i].IK);
                 circuitI++;
             }
             raport.generateSectionEnd();

@@ -12,5 +12,11 @@ public:
     double countVoltageDrop(double powerConsumption, double wireLength,double crossSection,double voltage);
     bool checkVoltageDrop(double voltageDrop);
     bool checkCircuitBreaker(double IB, double IZ, double circuitBreaker);
+    double countR(double wireLength, double crossSection, double voltage);
+    double countX(double wireLength);
+    double countRsum(double voltage, double R);
+    double countXsum(double voltage,double X);
+    double countZ(double Xsum, double Rsum);
+    double countIK(double voltage, double Z);
 };
 #endif

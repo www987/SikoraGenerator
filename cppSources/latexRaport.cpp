@@ -84,7 +84,7 @@ void LatexRaport::generateConclusion(bool isCBCorrect, bool isVDCorrect, bool is
     }
 }
 //Send latex row table to pointed file
-void LatexRaport::generateTable(std::string typeSection,double ID, double wireLength,double crossSection, double powerConsumption, double voltage, double VD, double IB){
-    m_latexFileTable <<'\n'<< "\\hline 10" << " & " << typeSection << ID << " & "<< wireLength << " & " << crossSection << " & " << powerConsumption << " & " << voltage << " & "<< ceil((VD) * 100.0)/100<< " & " << ceil((IB) * 100.0)/100 << " & ";
+void LatexRaport::generateTable(std::string typeSection, double ID, double wireLength,double crossSection, double powerConsumption, double voltage, double VD, double IB, double R, double X, double Rsum, double Xsum, double Z, double IK){
+    m_latexFileTable <<'\n'<< "\\hline 10" << " & " << typeSection << ID << " & "<< wireLength << " & " << crossSection << " & " << powerConsumption << " & " << voltage << " & "<< ceil((VD) * 100.0)/100<< " & " << ceil((IB) * 100.0)/100 << " & " << "R" << R << "X" << Rsum << "Rsum" << Xsum << "Xsum" << Z << "Z" << IK << "IK";
 }
 #endif

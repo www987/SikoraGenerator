@@ -112,7 +112,20 @@ public:
                 m_vectorDatabase[i].isVoltageDropCorrect = circuitObj.checkVoltageDrop(m_vectorDatabase[i].voltageDrop);
             else
                 m_vectorDatabase[i].isVoltageDropCorrect = circuitObj.checkVoltageDrop(m_vectorDatabase[0].voltageDrop + m_vectorDatabase[i].voltageDrop);
+
             m_vectorDatabase[i].isCircuitBreakerCorrect = circuitObj.checkCircuitBreaker(m_vectorDatabase[i].IB, m_vectorDatabase[i].IZ, m_vectorDatabase[i].circuitBreaker);
+
+            m_vectorDatabase[i].R = circuitObj.countR(m_vectorDatabase[i].wireLength, m_vectorDatabase[i].crossSection, m_vectorDatabase[i].voltage);
+
+            m_vectorDatabase[i].X = circuitObj.countX(m_vectorDatabase[i].wireLength);
+
+            m_vectorDatabase[i].Rsum = circuitObj.countRsum(m_vectorDatabase[i].voltage, m_vectorDatabase[i].R);
+
+            m_vectorDatabase[i].Xsum = circuitObj.countXsum(m_vectorDatabase[i].voltage, m_vectorDatabase[i].X);
+
+            m_vectorDatabase[i].Z = circuitObj.countZ(m_vectorDatabase[i].Xsum, m_vectorDatabase[i].Rsum);
+
+            m_vectorDatabase[i].IK = circuitObj.countIK(m_vectorDatabase[i].voltage, m_vectorDatabase[i].Z);
         }
         std::cout<<messageHeaders::pass<<"Wszystkie obwody zostaly poprawnie policzone!";
         std::cout<<messageHeaders::end;
@@ -134,6 +147,12 @@ public:
             std::cout << "\n\tcircuitBreaker:" << circuit.circuitBreaker;
             std::cout << "\n\tIB:" << circuit.IB;
             std::cout << "\n\tIZ:" << circuit.IZ;
+            std::cout << "\n\tR:" << circuit.R;
+            std::cout << "\n\tX:" << circuit.X;
+            std::cout << "\n\tRsum:" << circuit.Rsum;
+            std::cout << "\n\tXsum:" << circuit.Xsum;
+            std::cout << "\n\tZ:" << circuit.Z;
+            std::cout << "\n\tIK:" << circuit.IK;
             std::cout << "\n\tCorrectionRate:" << circuit.correctionRate;
             std::cout << "\n\tvoltageDrop:" << circuit.voltageDrop;
             std::cout << "\n\tIZCorrect:" << circuit.isIZCorrect;

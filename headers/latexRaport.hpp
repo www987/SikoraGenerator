@@ -20,6 +20,6 @@ public:
     void printVoltageDropCheck(bool isVDCorrect, double voltageDrop, std::string circuitType, double voltageDropWLZ);
     void printCircuitBreakerCheck(bool isCBCorrect, double IB, double IZ, double CB, const std::string& circuitType);
     void generateConclusion(bool isCBCorrect, bool isVDCorrect, bool isIZCorrect);
-    void generateTable(std::string typeSection,double ID, double wireLength,double crossSection, double powerConsumption, double voltage, double VD, double IB);
+    void generateTable(std::string typeSection,double ID, double wireLength,double crossSection, double powerConsumption, double voltage, double VD, double IB, double R, double X, double Rsum, double Xsum, double Z, double IK);
 };
 #endif
